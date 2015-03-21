@@ -1,13 +1,19 @@
 package entities;
 
+import javax.persistence.*;
+import javax.persistence.Entity;
 import java.io.Serializable;
 
 /**
  * Project: hobbyapp
  * Created by simamuec on 07.03.2015.
  */
+@Entity
+@Table(name="Message", schema = "hobbyapp")
 public class Message implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long messageID;
     private String content;
     private User sender;

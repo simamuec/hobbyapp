@@ -4,7 +4,7 @@ package entities;
  * Project: hobbyapp
  * Created by simamuec on 07.03.2015.
  */
-public interface Entity {
+public interface IEntity {
 
     @Override
     public String toString();

@@ -1,21 +1,38 @@
 package entities;
 
+
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 /**
  * Project: hobbyapp
  * Created by simamuec on 07.03.2015.
  */
-public class User implements Entity, Serializable {
+@Entity
+@Table(name="User", schema="hobbyapp")
+public class User implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long userID;
+    @NotNull
     private String name;
+    @NotNull
     private String username;
+    @NotNull
     private String email;
+    @NotNull
     private String city;
+    @NotNull
     private String country;
+    @NotNull
+    @Past
     private Date dateOfBirth;
+    @NotNull
     private String password;
 
 

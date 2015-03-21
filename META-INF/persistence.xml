@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="hobbyapp" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <!--class>entities.User</class-->
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value=""/>
+            <property name="javax.persistence.jdbc.url" value=""/>
+            <property name="" value=""/>
+            <property name="" value=""/>
+        </properties>
+    </persistence-unit>
+</persistence>

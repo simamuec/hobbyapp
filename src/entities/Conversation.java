@@ -1,15 +1,23 @@
 package entities;
 
+import javax.persistence.*;
+import javax.persistence.Entity;
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Project: hobbyapp
  * Created by simamuec on 07.03.2015.
  */
+@Entity
 public class Conversation implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long conversationID;
-    private Message[] messages;
+    @OneToMany
+    private Set<Message> messages;
+
     private Activity activity;
 
 
@@ -20,11 +28,11 @@ public class Conversation implements Serializable {
         return conversationID;
     }
 
-    public Message[] getMessages() {
+    public Set<Message> getMessages() {
         return messages;
     }
 
-    public void setMessages(Message[] messages) {
+    public void setMessages(Set<Message> messages) {
         this.messages = messages;
     }
 

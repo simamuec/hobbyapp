@@ -2,12 +2,29 @@ package database;
 
 /**
  * Project: hobbyapp
- * Created by simamuec on 07.03.2015.
+ * Created by simamuec on 21.03.2015.
  */
-public interface GenericDAO<T> {
+public class GenericDAO<T> implements IGenericDAO<T> {
 
-    public boolean create(T t);
-    public T read();
-    public boolean update(T t);
-    public boolean delete(T t);
+    T type;
+
+    @Override
+    public boolean create(T t) {
+        return false;
+    }
+
+    @Override
+    public T read() {
+        return null;
+    }
+
+    @Override
+    public boolean update(T t) {
+        return false;
+    }
+
+    @Override
+    public boolean delete(T t) {
+        return false;
+    }
 }

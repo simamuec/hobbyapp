@@ -1,15 +1,24 @@
 package entities;
 
+import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
  * Project: hobbyapp
  * Created by simamuec on 07.03.2015.
  */
+@Entity
+@Table(name = "Hobby", schema = "hobbyapp")
 public class Hobby implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long hobbyID;
+    @NotNull
     private String name;
+    @NotNull
     private String description;
     private Category category;
 

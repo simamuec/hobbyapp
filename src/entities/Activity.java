@@ -1,19 +1,34 @@
 package entities;
 
+import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 /**
  * Project: hobbyapp
  * Created by simamuec on 07.03.2015.
  */
+@Entity
+@Table(name = "Activity", schema = "hobbapp")
 public class Activity implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long activityID;
+    @ManyToOne
     private Hobby hobby;
-    private User[] partners;
+    @ManyToMany
+    private Set<User> partners;
+    @NotNull
     private Date startDate;
+    @NotNull
+    @Future
     private Date endDate;
+    @NotNull
     private boolean active;
 
 
@@ -32,11 +47,11 @@ public class Activity implements Serializable {
         this.hobby = hobby;
     }
 
-    public User[] getPartners() {
+    public Set<User> getPartners() {
         return partners;
     }
 
-    public void setPartners(User[] partners) {
+    public void setPartners(Set<User> partners) {
         this.partners = partners;
     }
 
