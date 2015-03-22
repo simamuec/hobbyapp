@@ -7,7 +7,7 @@ package database;
 public interface IGenericDAO<T> {
 
     public boolean create(T t);
-    public T read();
+    public T find(Object id);
     public boolean update(T t);
-    public boolean delete(T t);
+    public boolean delete(Object id);
 }
